@@ -47,5 +47,8 @@ python3 Sripts/gibbs_calc.py # Calculates the estimated Gibbs free energy of the
 - pdf files that resume all the calculated scrores and graph made for each nucleotides couple
 - CSV files that represents the differents scores for each nucleotide couple and ditances for the taining and prediction
 - Plots that represents the profiles of each RNA sequence
+- interaction_profiles forlder : contains the interaction profile ( the score as a
+function of the distance) for each one of the 10 pairs in distinct png file. It contains also one png file "interaction_profiles_all_pairs" that contains a plot that regoups all the interaction profiles in one plot.
+
 
 
