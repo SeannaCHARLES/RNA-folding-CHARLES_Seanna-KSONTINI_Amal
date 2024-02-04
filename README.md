@@ -33,11 +33,11 @@ git clone https://github.com/SeannaCHARLES/RNA-folding-CHARLES_Seanna-KSONTINI_A
 
 ## Launching Scripts
 ```
-Srcipts/training.py  # lunches statistical training on ten base pairs 
+python3 Srcipts/training.py  # lunches statistical training on ten base pairs 
 
-Sripts/plotting.py
+python3 Sripts/plotting.py
 
-Sripts/gibbs_calc.py  
+python3 Sripts/gibbs_calc.py  
 
 ## Training structures
 ....;
