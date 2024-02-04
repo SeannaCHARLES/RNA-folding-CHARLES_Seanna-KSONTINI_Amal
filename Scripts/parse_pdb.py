@@ -37,4 +37,4 @@ def parse_pdb_file(pdb_path) :
                     R[dist][NN]+=1
                     total+=1
     counts = {key: (len(values))/total for key, values in NN_dist_A.items()}
-    return(NN_dist_A,R,counts)
+    return(NN_dist_A,R,counts,total)
