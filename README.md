@@ -11,6 +11,7 @@ We consider the following base pairs : AA, AU, AC, AG, UU, UC, UG, CC, CG, GG.
 Only C3 atoms, interchain distances and residus separated by at least 3 positions on the sequence are taken into account 
 We also consider 30 distance intervals ranging from 1 to 20 Å
 
+Make sure that your file has C3' lines and that the x,y and z values are separated by tabulation and not -
 ## Installation
 
 Run the following commands 
