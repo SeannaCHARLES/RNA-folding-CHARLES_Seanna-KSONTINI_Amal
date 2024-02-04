@@ -19,12 +19,7 @@ Run the following commands
 git clone https://github.com/SeannaCHARLES/RNA-folding-CHARLES_Seanna-KSONTINI_Amal
 
 ```
-## Scripts run 
-```
-python3 training.py
-python3 plotting.py
-python3 gibbs_calc.py
-```
+
 ## Description of Scripts
 
 - training.py : Create one pdf files for each nucleotide couple and a csv files (resuming all the scores per couples and distances)
@@ -38,9 +33,11 @@ python3 gibbs_calc.py
 
 ## Launching Scripts
 ```
-./training.py  # lunches statistical training on ten base pairs 
+Srcipts/training.py  # lunches statistical training on ten base pairs 
 
-./plotting.py  
+Sripts/plotting.py
+
+Sripts/gibbs_calc.py  
 
 ## Training structures
 ....;
@@ -49,6 +46,6 @@ python3 gibbs_calc.py
 
 - pdf files that resume all the calculated scrores and graph made for each nucleotides couple
 - CSV files that represents the differents scores for each nucleotide couple and ditances for the taining and prediction
--
+- Plots that represents the profiles of each RNA sequence
 
 
