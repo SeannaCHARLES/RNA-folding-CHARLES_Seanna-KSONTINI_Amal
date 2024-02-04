@@ -6,7 +6,7 @@ from Calc_scores import calc_gibbs
 # The result of this file is a csv file containing all the different score per nucleotide couples and distances
 
 def main ():    
-    dict_,count,R,total=parse_pdb_file(sys.argv[1])
+    dict_,R,count,total=parse_pdb_file(sys.argv[1])
     score=calc_gibbs(R)
     creation_csv(score,"pred")
 main()
