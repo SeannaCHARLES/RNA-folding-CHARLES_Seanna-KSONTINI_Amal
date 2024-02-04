@@ -1,5 +1,8 @@
 import math
-#This file parse a pdb file
+# This file parse a pdb file
+# This script select only the line starting with ATOM and has C3' in it
+# With those lines the distance between all nucleotides seperated by at least 4 nucleotide is calculated
+
 def parse_pdb_file(pdb_path) :
     total=0
     NN_dist_A={}

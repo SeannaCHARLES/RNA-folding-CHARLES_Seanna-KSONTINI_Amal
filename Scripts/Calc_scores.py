@@ -1,6 +1,9 @@
 import pandas as pd
 import math
-#This file contains all the function that calculate the differents score
+# This file contains all the function that calculate the differents score
+# The range_ function gives to the calc_gibbs function the minimum score and the maximum score for 1A and 20A to calculate the gibss score
+# The calc_gibbs function calculate the gibbs score 
+# The Score function calculate the pseudo energy score
 def range_(pairs) : 
    
     score_file=pd.read_csv("final_res.csv",sep=",")

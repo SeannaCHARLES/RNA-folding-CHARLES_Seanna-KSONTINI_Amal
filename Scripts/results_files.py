@@ -6,7 +6,11 @@ from PyPDF2 import PdfMerger
 import matplotlib.pyplot as plt
 import math
 # This file contains all the script that create a results files (csv or pdf)
-
+# The creation_csv function create a csv file containing all the different score per nucleotide couple and distance
+# The creation score file function create a pdf file containg two graphs and the list of all calculated scores per distance. One file per nucleotide couple
+# The grahp log ration create a graph that represents the distribution of log ration per pairs
+# The Graph pairs distribution create a graph that represents the frequency of nucleotide couple in the sequence
+# The Graph pairs distribution  create a graph that represents the frequency of each distance per nucleotide couple
 def creation_csv(score_dict,type):
      with open(f'Final_res_{type}.csv', 'w', newline='') as csvfile:
         csvwriter = csv.writer(csvfile)
@@ -66,6 +70,7 @@ def Graph_log_ratio(dict_NN_dist,counts) :
         plt.title(f'Log ratio distribution for {key}')
         plt.savefig(f'Log_ratio_{key}.pdf') 
         plt.close()
+        
 def Graph_distribution(dict_NN_dist) :
     for key, values in dict_NN_dist.items():
         plt.figure(figsize=(8, 4))
