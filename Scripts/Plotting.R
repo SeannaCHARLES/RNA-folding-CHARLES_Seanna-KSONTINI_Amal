@@ -2,21 +2,27 @@ library(ggplot2)
 library(dplyr)
 
 plot_interaction_profiles <- function(csv_path, output_folder) {
+  # Loading the result data into a data frame 
   df <- read.csv(csv_path, header = TRUE, stringsAsFactors = FALSE)
   
   colnames(df) <- make.names(colnames(df))
   
+  # Handling ouput folder 
   if (!dir.exists(output_folder)) {
     dir.create(output_folder)
   }
-  
+
+  # Empty ggplot object for all pairs
   p_all_pairs <- ggplot()
   
   for (pair in unique(df$Nucleotide.pairs)) {
     scores <- suppressWarnings(as.numeric(df[df$Nucleotide.pairs == pair, -1]))
     scores <- na.omit(scores)
     distances <- seq_along(scores)
+    # Data frame for ggplot
     data_to_plot <- data.frame(distances = distances, scores = scores, pair = rep(pair, length(scores)))
+    
+    # Create a ggplot object for each pair
     p_pair <- ggplot(data_to_plot, aes(x = distances, y = scores, color = pair)) +
       geom_line() +
       labs(x = "Distance", y = "Score", title = paste("Interaction Profile for", pair)) +
