@@ -19,7 +19,12 @@ Run the following commands
 git clone https://github.com/SeannaCHARLES/RNA-folding-CHARLES_Seanna-KSONTINI_Amal
 
 ```
-
+## Scripts run 
+```
+python3 training.py
+python3 plotting.py
+python3 gibbs_calc.py
+```
 ## Description of Scripts
 
 - training.py : Create one pdf files for each nucleotide couple and a csv files (resuming all the scores per couples and distances)
