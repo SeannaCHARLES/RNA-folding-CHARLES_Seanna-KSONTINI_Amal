@@ -7,6 +7,8 @@ def parse_pdb_file(pdb_path) :
     total=0
     NN_dist_A={}
     R={}
+    wnated_pairs=["AA", "AU", "AC", "AG", "UU", "UC", "UG", "CC",
+"CG", "GG"]
     folder = os.listdir(pdb_path)
     for files in folder :
         with open(os.path.join(pdb_path, files),'r') as pdb_file : 
@@ -25,18 +27,18 @@ def parse_pdb_file(pdb_path) :
                 z2=float(kept_lines[j][8])
 
                 dist=round(math.sqrt((x2-x1)**2+(y2-y1)**2+(z2-z1)**2))
-     
-                if kept_lines[j][4]==kept_lines[i][4]=="A" :
-                    if NN not in NN_dist_A : 
-                        NN_dist_A[NN]=[]
+                if NN in wnated_pairs :
+                    if kept_lines[j][4]==kept_lines[i][4]=="A" :
+                        if NN not in NN_dist_A : 
+                            NN_dist_A[NN]=[]
                
-                    if dist <=20 and dist>0:
-                        NN_dist_A[NN].append(dist)
-                        if dist not in R : 
-                            R[dist]={}
-                        if NN not in R[dist] :
-                            R[dist][NN]=0
-                        R[dist][NN]+=1
-                        total+=1
+                        if dist <=20 and dist>0:
+                            NN_dist_A[NN].append(dist)
+                            if dist not in R : 
+                                R[dist]={}
+                            if NN not in R[dist] :
+                                R[dist][NN]=0
+                            R[dist][NN]+=1
+                            total+=1
         counts = {key: (len(values)) for key, values in NN_dist_A.items()}
     return(NN_dist_A,R,counts,total)
