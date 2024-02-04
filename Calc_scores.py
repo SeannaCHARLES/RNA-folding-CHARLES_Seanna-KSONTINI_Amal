@@ -1,8 +1,12 @@
 import pandas as pd
-#This file contains all the function that calculate the differents score
+import math
+# This file contains all the function that calculate the differents score
+# The range_ function gives to the calc_gibbs function the minimum score and the maximum score for 1A and 20A to calculate the gibss score
+# The calc_gibbs function calculate the gibbs score 
+# The Score function calculate the pseudo energy score
 def range_(pairs) : 
    
-    score_file=pd.read_csv("final_res.csv",sep=",")
+    score_file=pd.read_csv("Results/final_res.csv",sep=",")
     ligne=score_file[score_file['Nucleotide pairs'] == pairs]
     val_min = float(ligne['0A'].min())
     val_max = float(ligne['20A'].max())
@@ -20,3 +24,17 @@ def calc_gibbs(R) :
             if key not in score_dist[key2]:
                 score_dist[key2][key]=gibbs
     return(score_dist)
+
+def Score (counts,R) :
+    score_dict={}
+    for key, values in R.items() : 
+        for key2,values2 in values.items() :
+        #print(key2, values2)
+            obs_prob=values2/counts[key2]
+            ref_freq=len(values)/20
+            pseudo_en=-math.log(obs_prob/ref_freq)
+            if key2 not in score_dict :
+                score_dict[key2]={}
+            if key not in score_dict[key2] : 
+                score_dict[key2][key]=[obs_prob,ref_freq,pseudo_en]
+    return(score_dict)
