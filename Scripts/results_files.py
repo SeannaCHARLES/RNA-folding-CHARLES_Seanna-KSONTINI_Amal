@@ -83,7 +83,7 @@ def Graph_distribution(dict_NN_dist) :
         plt.close()
 
 def Graph_pairs_distribution(counts):
-    plt.bar(counts.keys(), counts.values())
+    plt.bar(counts.keys(), [v / total for v in counts.values()])
     plt.xlabel('Nucleotide couple')
     plt.ylabel('Number of apparitions')
     plt.title('Number of time a nucleotide couple appears in the sequence')
