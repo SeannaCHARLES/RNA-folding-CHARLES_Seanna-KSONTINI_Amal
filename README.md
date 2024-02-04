@@ -27,7 +27,7 @@ git clone https://github.com/SeannaCHARLES/RNA-folding-CHARLES_Seanna-KSONTINI_A
 
 - Plotting.R : Plots the results from training.py with the score as a function of the distance. As a result it outputs one file with the profile for each pair and a file containing all the profiles in the same plot. 
 
-- gibbs_calc.py test_folder_path : Create a csv files that resume all the predicted scores per nucleotid couple and distances
+- gibbs_calc.py test_folder_path : Create a csv files that resume all the predicted scores per nucleotid couple and distances. "test_folder_path" is the input of this script, here it's named "Test".
 
 
 ## Launching Scripts
