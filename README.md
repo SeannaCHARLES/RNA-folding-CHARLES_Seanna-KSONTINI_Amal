@@ -18,10 +18,11 @@ Run the following command
 
 ```
 git clone https://github.com/SeannaCHARLES/RNA-folding-CHARLES_Seanna-KSONTINI_Amal
+
 pip install -r requirement.txt 
 
 ```
-You have also to install the packages "ggplot2" and "dplyr" on R
+You need also to install the packages "ggplot2" and "dplyr" on R
 
 ## Description of Scripts
 
