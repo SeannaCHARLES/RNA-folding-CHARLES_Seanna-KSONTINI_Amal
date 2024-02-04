@@ -8,7 +8,7 @@ def range_(pairs) :
    
     score_file=pd.read_csv("final_res.csv",sep=",")
     ligne=score_file[score_file['Nucleotide pairs'] == pairs]
-    val_min = float(ligne['0A'].min())
+    val_min = float(ligne['1A'].min())
     val_max = float(ligne['20A'].max())
     
     return(val_min,val_max)
