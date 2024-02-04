@@ -22,13 +22,13 @@ git clone https://github.com/SeannaCHARLES/RNA-folding-CHARLES_Seanna-KSONTINI_A
 
 ## Description of Scripts
 
-- training.py :
+- training.py : Create one pdf files for each nucleotide couple and a csv files (resuming all the scores per couples and distances)
 
 - Plotting.R : plots the results from training.py with the score as a function of the distance 
 
 - plotting.py : plots the results from training.py with the score as a function of the distance 
 
-- scoring.py
+- gibbs_calc.py : Create a csv files that resume all the predicted scores per nucleotid couple and distances
 
 
 ## Launching Scripts
@@ -42,8 +42,8 @@ git clone https://github.com/SeannaCHARLES/RNA-folding-CHARLES_Seanna-KSONTINI_A
 
 ## Results
 
--
--
+- pdf files that resume all the calculated scrores and graph made for each nucleotides couple
+- CSV files that represents the differents scores for each nucleotide couple and ditances for the taining and prediction
 -
 
 
