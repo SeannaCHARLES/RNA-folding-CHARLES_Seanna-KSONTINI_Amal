@@ -42,6 +42,8 @@ python3 Sripts/gibbs_calc.py # Calculates the estimated Gibbs free energy of the
 
 ## Training files
 
+The training files used in this method are stored in the inputs folder. The input folder contains 10 pdb files which represent RNA strutures. These are the inputs of the training.py script.
+
 ## Results
 
 - pdf files that resume all the calculated scrores and graph made for each nucleotides couple
