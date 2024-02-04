@@ -56,7 +56,7 @@ def creation_score_file(score_dict):
         for pdf in pdfs : 
             os.remove(pdf)
 
-def Grap_log_ratio(dict_NN_dist,counts) :
+def Graph_log_ratio(dict_NN_dist,counts) :
     for key, values in dict_NN_dist.items():
         plt.figure(figsize=(8, 4))
         log_ratios = [math.log(value / counts[key]) for value in values]
@@ -66,7 +66,7 @@ def Grap_log_ratio(dict_NN_dist,counts) :
         plt.title(f'Log ratio distribution for {key}')
         plt.savefig(f'Log_ratio_{key}.pdf') 
         plt.close()
-def Grap_distribution(dict_NN_dist) :
+def Graph_distribution(dict_NN_dist) :
     for key, values in dict_NN_dist.items():
         plt.figure(figsize=(8, 4))
         plt.hist(values, bins='auto', alpha=0.7)
