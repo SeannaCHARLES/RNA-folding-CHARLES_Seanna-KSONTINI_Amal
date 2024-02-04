@@ -14,7 +14,7 @@ We also consider 30 distance intervals ranging from 1 to 20 Å
 Make sure that your file has C3' lines and that the x,y and z values are separated by tabulation and not -
 ## Installation
 
-Run the following commands 
+Run the following command
 
 ```
 git clone https://github.com/SeannaCHARLES/RNA-folding-CHARLES_Seanna-KSONTINI_Amal
