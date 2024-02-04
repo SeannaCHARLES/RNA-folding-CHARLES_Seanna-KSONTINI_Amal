@@ -36,7 +36,7 @@ python3 Srcipts/training.py  # lunches statistical training on ten base pairs
 
 ./Sripts/plotting.R   # Creats plots of the score as a function of the distance for each pair
 
-python3 Sripts/gibbs_calc.py
+python3 Sripts/gibbs_calc.py # Calculates the estimated Gibbs free energy of the evaluated RNA conformation
 
 ```
 
