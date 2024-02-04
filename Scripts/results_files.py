@@ -1,5 +1,6 @@
 import csv
 import os
+import sys
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from PyPDF2 import PdfMerger
@@ -12,7 +13,7 @@ import math
 # The Graph pairs distribution create a graph that represents the frequency of nucleotide couple in the sequence
 # The Graph pairs distribution  create a graph that represents the frequency of each distance per nucleotide couple
 def creation_csv(score_dict,type):
-     with open(f'Final_res_{type}.csv', 'w', newline='') as csvfile:
+     with open(f'Results/Final_res_{type}.csv', 'w', newline='') as csvfile:
         csvwriter = csv.writer(csvfile)
 
         entete = ['Nucleotide pairs'] + [str(i) + 'A' for i in range(21)]
@@ -27,7 +28,7 @@ def creation_csv(score_dict,type):
 
 def creation_score_file(score_dict):
     for key, values in score_dict.items():
-        with open(f"Result_file_pairs_{key}.pdf", 'wb') as res:
+        with open(f"Results/Result_file_pairs_{key}.pdf", 'wb') as res:
             pdf_canvas = canvas.Canvas(res)
             title = f'For the pairs of nucleotide : {key}'
             pdf_canvas.drawString(100, pdf_canvas._pagesize[1] - 50, title)
@@ -51,7 +52,7 @@ def creation_score_file(score_dict):
         merger = PdfMerger()
  
 
-        pdfs = [f'results/histogram_Distribution_{key}.pdf', f'results/Log_ratio_{key}.pdf', f'results/Result_file_pairs_{key}.pdf']
+        pdfs = [f'Results/histogram_Distribution_{key}.pdf', f'Results/Log_ratio_{key}.pdf', f'Results/Result_file_pairs_{key}.pdf']
  
         for pdf in pdfs:
             merger.append(pdf)
@@ -68,7 +69,7 @@ def Graph_log_ratio(dict_NN_dist,counts) :
         plt.xlabel(f'Log ratio log(distance/nb of apparition {key})')
         plt.ylabel('Frequency')
         plt.title(f'Log ratio distribution for {key}')
-        plt.savefig(f'Log_ratio_{key}.pdf') 
+        plt.savefig(f'Results/Log_ratio_{key}.pdf') 
         plt.close()
         
 def Graph_distribution(dict_NN_dist) :
@@ -78,7 +79,7 @@ def Graph_distribution(dict_NN_dist) :
         plt.xlabel('Distance values')
         plt.ylabel('Frequency')
         plt.title(f'Ditribution histogram for {key}')
-        plt.savefig(f'histogram_Distribution_{key}.pdf')  
+        plt.savefig(f'Results/histogram_Distribution_{key}.pdf')  
         plt.close()
 
 def Graph_pairs_distribution(counts):
@@ -86,5 +87,5 @@ def Graph_pairs_distribution(counts):
     plt.xlabel('Nucleotide couple')
     plt.ylabel('Number of apparitions')
     plt.title('Number of time a nucleotide couple appears in the sequence')
-    plt.savefig(f'Number_of_time_a_nucleotide_couple_appears_in_the_sequence_chainA.pdf')  
+    plt.savefig(f'Results/Number_of_time_a_nucleotide_couple_appears_in_the_sequence_chainA.pdf')  
     plt.close()
