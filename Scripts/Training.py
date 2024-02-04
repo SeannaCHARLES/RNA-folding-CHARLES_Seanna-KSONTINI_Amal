@@ -6,7 +6,7 @@ from Calc_scores import Score
 # The result of this script is to have a pdf and a csv file 
 # The pdf file has two graph and the list of all the calculate score per distance
 def main():
-    Main_dict,R_dict,counts,total=parse_pdb_file("2jyf.pdb")
+    Main_dict,R_dict,counts,total=parse_pdb_file("Inputs")
     Grap_log_ratio(Main_dict,counts,total)
     Grap_distribution(Main_dict)
     Graph_pairs_distribution(counts,total)
